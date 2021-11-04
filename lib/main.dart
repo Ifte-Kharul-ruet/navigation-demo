@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_demo/screens/second_page.dart';
 import '/screens/first_page.dart';
 
 void main() {
@@ -11,7 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstPage(),
+      routes: {
+        '/': (ctx) => FirstPage(),
+        SecondPage.routeName: (ctx) => SecondPage(),
+      },
+      //home: FirstPage(),
+      initialRoute: '/',
     );
   }
 }

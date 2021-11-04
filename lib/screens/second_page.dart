@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
-  final List<String> n;
-  const SecondPage({Key? key, required this.n}) : super(key: key);
+  static const routeName = '/second';
+  // const SecondPage({Key? key, required this.n}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as List<String>;
     return Scaffold(
       appBar: AppBar(
         title: Text('Second Page'),
@@ -14,7 +15,7 @@ class SecondPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for (var j in n)
+            for (var j in args)
               Container(
                 padding: EdgeInsets.all(10.0),
                 margin: EdgeInsets.symmetric(vertical: 15.0),
